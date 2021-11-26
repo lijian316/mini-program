@@ -1,0 +1,13 @@
+<view>
+  <mp-msg type="{{iconType}}" title="{{iconDes}}">
+    <view slot="desc">
+      {{ info }}
+    </view>
+    <view slot="extend">
+      <view>如有疑问，请添加微信查询</view>
+    </view>
+  </mp-msg>
+</view>
+<view class="img">
+  <image src="/images/we.jpg" data-src="https://7461-tang-ypcnq-1301487013.tcb.qcloud.la/kefu1.jpg?sign=d323f1911fe96fa2f11e2a8b824b6e0d&t=1598519913" bindtap="previewImage" mode="aspectFit" selectable="true"></image>
+</view>

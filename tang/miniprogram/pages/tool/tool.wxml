@@ -1,0 +1,7 @@
+<view class="weui-btn-area">
+	<button class="weui-btn" type="primary" bindtap="chooseFile">批量导入运单号</button>
+</view>
+
+<view class="result1" wx:for="{{result}}" wx:key="unique">
+	{{result[index]}}
+</view>

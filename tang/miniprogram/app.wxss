@@ -1,0 +1,11 @@
+@import './weui-miniprogram/weui-wxss/dist/style/weui.wxss';
+
+page {
+  height: 100%;
+  background-size: 100%;
+  text-align: center;
+  background: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}

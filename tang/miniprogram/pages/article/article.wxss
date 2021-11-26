@@ -1,0 +1,8 @@
+.page {
+  padding: 50px;
+  text-align: left;
+}
+
+.inside {
+  text-indent: 35px;
+}

@@ -1,0 +1,7 @@
+.result1 {
+  width: 90%;
+  height: auto;
+  margin: 10px auto;
+  font-size: 14px;
+  text-align: left;
+}

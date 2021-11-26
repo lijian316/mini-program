@@ -1,0 +1,103 @@
+.container {
+  width: 90%;
+  height: auto;
+  margin: 50rpx auto;
+  box-sizing: border-box;
+  max-width: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 0;
+  background: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 0.2857rem;
+  box-shadow: 0 3px 0 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+  -webkit-transition: box-shadow 0.2s ease;
+  transition: box-shadow 0.2s ease;
+  z-index: '';
+  overflow: scroll;
+}
+
+.kefu-btn {
+  background: none;
+  margin-bottom: 10px;
+}
+
+.kefu-icon {
+  width: 30px;
+  height: 40px;
+}
+
+.section {
+  width: 85%;
+  margin: 50rpx auto 0 auto;
+  text-transform: none;
+  background: #e8e8e8;
+  padding: 0.6em 0.8em 0.6em 0.5em;
+  border-radius: 0.2857rem;
+  box-shadow: none;
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 0.9em;
+}
+
+.icon {
+  float: left;
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.title,
+.divider {
+  display: inline-block;
+  opacity: 0.5;
+  margin: 0 0.2rem;
+  font-size: 0.9em;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.myTxt {
+  width: 90%;
+  height: auto;
+  float: right;
+}
+
+.commit-btn {
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  background-color: #5bbd72 !important;
+  color: #fff;
+  text-shadow: none;
+  background-image: none;
+  font-size: 1rem;
+  cursor: pointer;
+  display: inline-block;
+  min-height: 1em;
+  outline: 0;
+  border: none;
+  vertical-align: baseline;
+  margin: 20 0.25em 0 0;
+  padding: 0.78571em 1.5em;
+  text-transform: none;
+  font-weight: 700;
+  line-height: 1;
+  font-style: normal;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 0.2857rem;
+  box-shadow: 0 0 0 1px transparent inset, 0 0 0 0 rgba(39, 41, 43, 0.15) inset;
+}
+
+.gonggao {
+  padding: 20px;
+  font-size: 14px;
+}

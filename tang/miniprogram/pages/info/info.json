@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-steps": "../../vantui-miniprogram/steps/index",
+    "van-search": "../../vantui-miniprogram/search/index",
+    "van-popup": "../../vantui-miniprogram/popup/index"
+  }
+}

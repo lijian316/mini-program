@@ -1,0 +1,12 @@
+<view class="container">
+  <input bindinput="bindMenCodeInput" class="weui-input" placeholder="请输入门诊号" />
+  <input bindinput="bindMyCodeInput" class="weui-input" placeholder="请输入卡号" />
+  <input bindinput="bindNameInput" class="weui-input" placeholder="请输入姓名" />
+  <view class="weui-btn-area">
+    <button class="weui-btn" type="primary" bindtap="login">登陆</button>
+  </view>
+</view>
+
+<button class="kefu-btn">
+  <image class="kefu-icon" src="/images/kefu.png" mode="aspectFit" bindtap="ask"></image>
+</button>

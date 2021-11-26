@@ -1,0 +1,64 @@
+<view class="container">
+  <van-steps steps="{{ steps }}" active="{{ active }}" />
+
+  <!-- =================step1=============== -->
+  <view class="section" wx:if="{{active==0}}">
+    <image class="icon" src="/images/map.png" mode="aspectFit"></image>
+    <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+      <view class="item address">
+        <text>{{region[0]}}</text>
+        <text class="divider">/</text>
+        <text>{{region[1]}}</text>
+        <text class="divider">/</text>
+        <text>{{region[2]}}</text>
+      </view>
+    </picker>
+  </view>
+  <view class="section" wx:if="{{active==0}}">
+    <image class=" icon" src="/images/address.png" mode="aspectFit"></image>
+    <textarea class="myTxt" bindinput="bindAddressChange" auto-height placeholder="请输入详细地址 " value='{{address}}' />
+  </view>
+  <view class="section" wx:if="{{active==0}}">
+    <image class="icon" src="/images/tel.png" mode="aspectFit"></image>
+    <textarea class="myTxt" bindinput="bindTelChange" auto-height placeholder="请输入联系电话" value='{{tel}}' />
+  </view>
+  <!-- <view class="section" wx:if="{{active==0}}">
+    <image class="icon" src="/images/pin.png" mode="aspectFit"></image>
+    <textarea class="myTxt" disabled="false" auto-height value='{{eat}}' />
+  </view> -->
+  <view wx:if="{{active==0}}">
+    <button class="commit-btn" bindtap="commit" disabled="{{notOpen}}">登记</button>
+  </view>
+  <view>快递费：{{emsMoney}}，挂号费： {{menMoney}}，材料费：5</view>
+  <text wx:if="{{active==0}}">{{reason}}</text>
+
+  <!-- =================step2=============== -->
+  <mp-msg type="{{iconType}}" title="您已经登记成功" wx:if="{{active==1}}">
+    <view slot="desc">
+      登记成功/已登记，请添加微信进行后续操作
+    </view>
+    <view slot="extend">
+      <text class="title" selectable="true">你最近一次登记时间为： {{time}} </text>
+    </view>
+  </mp-msg>
+  <view wx:if="{{active==1}}">
+    <image src="/images/we.jpg" data-src="https://7461-tang-ypcnq-1301487013.tcb.qcloud.la/kefu1.jpg?sign=d323f1911fe96fa2f11e2a8b824b6e0d&t=1598519913" bindtap="previewImage" mode="aspectFit" selectable="true"></image>
+  </view>
+  <view wx:if="{{active==1}}">
+    <button class="commit-btn" bindtap="contect">查物流</button>
+  </view>
+
+  <!-- =================step3=============== -->
+  <van-search wx:if="{{active==2}}" value="{{emsNum}}" placeholder="请输入顺丰运单号" use-action-slot bind:change="bindEmsChange" bind:search="emsCheck">
+    <view slot="action" bind:tap="emsCheck">搜索</view>
+  </van-search>
+  <van-steps wx:if="{{active==2}}" steps="{{tang_steps}}" active="{{tang_active}}" direction="vertical" />
+  <button wx:if="{{active==2}}" class="commit-btn" bindtap="copy">一键复制运单号</button>
+  <button wx:if="{{active==2}}" class="commit-btn" bindtap="ems">我已收件</button>
+</view>
+
+<view class="gonggao">{{info}}</view>
+
+<button class="kefu-btn" wx:if="{{active!=1}}">
+  <image class="kefu-icon" src="/images/kefu.png" mode="aspectFit" bindtap="ask"></image>
+</button>

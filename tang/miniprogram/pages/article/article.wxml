@@ -1,0 +1,16 @@
+<view class="page">
+  <view class="page__hd">
+    <view class="weui-article__p">
+      亲爱的糖友您好:
+    </view>
+    <view class="weui-article__p inside">
+      欢迎使用小程序“糖来咯”，如果您需要登记寄送药物，请仔细阅读以下规则：
+    </view>
+    <view class="weui-article__p inside">
+      请您本着自愿原则填写资料，确保资料真实，我们会加以人工核实并且会对您需要寄送服务，请点击“我同意”按钮，视为您委托我来帮您代领药物，非自愿可以点击取消或者关闭程序。 感谢您的信任与配合！
+    </view>
+    <view class="weui-btn-area">
+      <button class="weui-btn" type="primary" bindtap="bingAgress">已知悉</button>
+    </view>
+  </view>
+</view>
