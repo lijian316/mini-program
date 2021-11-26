@@ -1,0 +1,16 @@
+{
+  "usingComponents": {
+    "van-collapse": "../../lib/dist/collapse/index",
+    "van-collapse-item": "../../lib/dist/collapse-item/index",
+    "van-search": "../../lib/dist/search/index",
+    "van-cell": "../../lib/dist/cell/index",
+    "van-cell-group": "../../lib/dist/cell-group/index",
+    "van-dialog": "../../lib/dist/dialog/index",
+    "van-field": "../../lib/dist/field/index",
+    "van-button": "../../lib/dist/button/index",
+    "van-row": "../../lib/dist/row/index",
+    "van-col": "../../lib/dist/col/index",
+    "van-grid": "../../lib/dist/grid/index",
+    "van-grid-item": "../../lib/dist/grid-item/index"
+  }
+}

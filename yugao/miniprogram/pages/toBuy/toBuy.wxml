@@ -1,0 +1,23 @@
+<view class="toBuy-group">
+  <view wx:for="{{toBuyList}}" wx:key="unique" class="no-group">
+    <view class="{{itemClassArr[index]}}" bindtap="onHandle" data-index="{{index}}">{{item}}
+      <van-icon custom-class="close-icon" wx:if="{{index != toBuyList.length-1}}" bindtap="onRemove"
+        data-index="{{index}}" name="cross" />
+    </view>
+  </view>
+</view>
+
+<!-- 说明 -->
+<view class="line"> * 茶色标签为今日直播，点击可查看详情</view>
+
+<!-- 输入弹窗 -->
+<van-dialog use-slot title="添加待购" show="{{ showInput }}" close-on-click-overlay="true" show-cancel-button
+  bind:confirm="onInputConfirm">
+  <van-field autosize placeholder="请输入待购关键字如(面霜,精华,旅游)" bind:confirm="onInputConfirm" bind:change="onInputChange" />
+</van-dialog>
+
+<van-popup show="{{ showResult }}" position="top" close-on-click-overlay bind:close="onHideResult">
+  <van-cell-group wx:for="{{searchList}}" wx:key="unique">
+    <van-cell title="{{item}}" />
+  </van-cell-group>
+</van-popup>

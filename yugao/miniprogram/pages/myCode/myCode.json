@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "van-steps": "../../lib/dist/steps/index",
+    "van-button": "../../lib/dist/button/index",
+    "van-dialog": "../../lib/dist/dialog/index",
+    "van-search": "../../lib/dist/search/index",
+    "van-card": "../../lib/dist/card/index",
+    "van-tree-select": "../../lib/dist/tree-select/index"
+  },
+  "navigationBarTitleText": "预告来咯（往期推荐）"
+}

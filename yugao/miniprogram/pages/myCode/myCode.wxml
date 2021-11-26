@@ -1,0 +1,14 @@
+<view class="all-container">
+  <van-tree-select items="{{ items }}" height="100vh" main-active-index="{{ mainActiveIndex }}"
+    active-id="{{ activeId }}" bind:click-nav="onClickNav">
+
+    <van-card wx:for="{{curList}}" wx:key="unique" desc="{{item.zhubo + '推荐;'}}" title="{{item.name}}" num="请前往淘宝搜索 x"
+      thumb="{{ 'cloud://xianyuinfo-byqz9.7869-xianyuinfo-byqz9-1301827009/_code/' + item.name + '.jpg' }}"
+      slot="content">
+      <view slot="footer">
+        <van-button bindtap="onCopy" data-index="{{index}}">点我获取链接</van-button>
+      </view>
+    </van-card>
+
+  </van-tree-select>
+</view>

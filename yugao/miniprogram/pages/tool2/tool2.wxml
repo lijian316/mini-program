@@ -1,0 +1,20 @@
+<van-cell-group>
+  <van-field value="{{ pname }}" label="产品名称" placeholder="请输入产品名称" bind:input="pnameInput" />
+  <van-field value="{{ pcode }}" label="产品口令" placeholder="请输入产品口令" bind:input="pcodeInput"/>
+  <van-field value="{{ ptype }}" label="产品类别" placeholder="请输入下方类别对应的数字" bind:input="ptypeInput"/>
+  <van-field value="{{ pzhubo }}" label="产品主播" placeholder="可输入多人，用小写逗号（,）分割" bind:input="pzhuboInput" />
+</van-cell-group>
+<view class="btn">
+  <button type="primary" bindtap="onSelect">{{picPath}}</button>
+  <button type="primary" bindtap="onCommit"> 提交 </button>
+</view>
+
+<van-card wx:for="{{list}}" wx:key="unique" desc="{{item.zhubo}}" title="{{item.name}}"
+  thumb="{{ 'cloud://xianyuinfo-byqz9.7869-xianyuinfo-byqz9-1301827009/_code/' + item.name + '.jpg' }}">
+  <view slot="footer">
+    <van-button bindtap="onUp" data-index="{{index}}" wx:if="{{!item.isAct}}">上架</van-button>
+    <van-button bindtap="onDown" data-index="{{index}}" wx:if="{{item.isAct}}">下架</van-button>
+  </view>
+</van-card>
+
+<button type="primary" bindtap="onDownAll"> 全部下架 </button>

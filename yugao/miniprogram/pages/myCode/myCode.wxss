@@ -1,0 +1,46 @@
+page {
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.line {
+  font-weight: lighter;
+  text-align: center;
+  color: #333333;
+  font-size: 14px;
+  margin: 20px auto;
+  display: block;
+  clear: both;
+}
+
+.title-container {
+  text-align: center;
+  margin: 20px auto;
+  font-weight: lighter;
+}
+
+.title-container view {
+  margin: 10px auto;
+}
+
+.step-container {
+  padding: 10%;
+  /* background: #d3d3d3; */
+  margin: 10px auto;
+  font-size: smaller;
+}
+
+.step-btn {
+  text-align: center;
+}
+
+.step-des {
+  text-align: center;
+  margin: 0 0 10px 0;
+}
+
+.go-container {
+  background: #444;
+}

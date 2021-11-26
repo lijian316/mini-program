@@ -1,0 +1,75 @@
+page {
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.toBuy-group {
+  width: 80%;
+  margin: 50px auto 0 auto;
+}
+
+.toBuy-item {
+  float: left;
+  width: auto;
+  background-color: #e8e8e8;
+  border-radius: 0.285rem;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: small;
+  padding: 0.6rem;
+  margin: 2px;
+  border: 1px solid #e8e8e8;
+}
+
+.toBuy-item-teal {
+  float: left;
+  width: auto;
+  background-color: #00b5Ad;
+  border-radius: 0.285rem;
+  color: #ffffff;
+  font-size: small;
+  padding: 0.6rem;
+  margin: 2px;
+  border: 1px solid #e8e8e8;
+}
+
+.popup {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 100px;
+  margin: 0 auto;
+}
+
+.check-btn {
+  margin: 10px 10px;
+  float: right;
+}
+
+.line {
+  width: 70%;
+  font-weight: lighter;
+  text-align: center;
+  color: #333333;
+  font-size: 14px;
+  margin: 20px auto;
+  display: block;
+  clear: both;
+}
+
+.toBuy-item .close-icon {
+  margin-left: 10px;
+  height: auto;
+  border-left: dashed 1px #333;
+  padding: 0 0 0 10px;
+}
+
+.toBuy-item-teal .close-icon {
+  margin-left: 10px;
+  height: auto;
+  border-left: dashed 1px #fff;
+  padding: 0 0 0 10px;
+}

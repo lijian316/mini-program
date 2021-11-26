@@ -1,0 +1,40 @@
+{
+  "pages": [
+
+    "pages/index/index",
+    "pages/toBuy/toBuy",
+    "pages/myCode/myCode",
+
+    "pages/tool2/tool2",
+    "pages/tool/tool"
+
+  ],
+  "window": {
+    "backgroundColor": "#FFFFFF",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTitleText": "预告来咯",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "iconPath": "./images/yugao.png",
+      "selectedIconPath": "./images/yugao_over.png",
+      "text": "预告清单"
+    }, {
+      "pagePath": "pages/toBuy/toBuy",
+      "iconPath": "./images/list.png",
+      "selectedIconPath": "./images/list_over.png",
+      "text": "待购清单"
+    }, {
+      "pagePath": "pages/myCode/myCode",
+      "iconPath": "./images/code.png",
+      "selectedIconPath": "./images/code_over.png",
+      "text": "分类清单"
+    }]
+  },
+  "sitemapLocation": "sitemap.json"
+}

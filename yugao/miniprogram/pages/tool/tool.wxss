@@ -1,0 +1,15 @@
+page {
+  background: #fff;
+}
+
+button {
+  margin: 5px auto;
+}
+
+.inputArea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px auto;
+  background: #eee;
+  height: 400px;
+}

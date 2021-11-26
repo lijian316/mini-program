@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-field": "../../lib/dist/field/index",
+    "van-dialog": "../../lib/dist/dialog/index",
+    "van-icon": "../../lib/dist/icon/index",
+    "van-popup": "../../lib/dist/popup/index",
+    "van-cell": "../../lib/dist/cell/index",
+    "van-cell-group": "../../lib/dist/cell-group/index"
+  }
+}

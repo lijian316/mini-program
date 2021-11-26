@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-card": "../../lib/dist/card/index",
+    "van-button": "../../lib/dist/button/index",
+    "van-field": "../../lib/dist/field/index"
+  }
+}

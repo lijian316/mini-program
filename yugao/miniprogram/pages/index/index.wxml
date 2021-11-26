@@ -1,0 +1,59 @@
+<!-- 搜索 -->
+<van-search value="{{ value }}" input-align="center" bind:change="onInputChange" bind:search="onSearch"
+  placeholder="请输入产品/品牌关键字如(精华,面霜,旅游)" />
+
+<!-- 列表 -->
+<view wx:if="{{searchList.length==0}}">
+  <!-- 今日预告 -->
+  <view class="line">『 {{dateStr}} · 主播 』</view>
+  <van-collapse accordion value="{{ activeName }}" bind:change="onChange" wx:for="{{todayList}}" wx:key="unique">
+    <van-collapse-item title="{{item.name + item.platform + item.des + item.start_tm}}" name="{{item.name}}"
+      disabled="{{!item.act}}">
+      <view wx:if="{{item.picNum != 0}}" class="tip-btn" bindtap="onPic" data-index="{{index}}">图文预览</view>
+      <block wx:for="{{item.list}}" wx:key="unique">
+        <view class="txt-item">{{item}}</view>
+      </block>
+    </van-collapse-item>
+  </van-collapse>
+
+  <!-- 今日无预告主播列表 -->
+  <view class="line">『 {{dateStr}} · 产品 』</view>
+
+  <view class="tag-group">
+    <view wx:for="{{todayTagList}}" wx:key="unique" class="no-group">
+      <view class="no-btn" bindtap="onTodayTagListTap" data-index="{{index}}">{{item}}</view>
+    </view>
+  </view>
+</view>
+
+<!-- 结果 -->
+<view wx:if="{{searchList.length!=0}}">
+  <view class="line" bindtap="onBack">『{{searchStr}}』 『返回』</view>
+  <van-cell-group wx:for="{{searchList}}" wx:key="unique">
+    <van-cell title="{{item}}" />
+  </van-cell-group>
+</view>
+
+<!-- 说明 -->
+<view class="line"> * 预告产品最终以直播间为准</view>
+
+<!-- 输入弹窗 -->
+<van-dialog use-slot title="添加主播" show="{{ showInput }}" close-on-click-overlay="true" show-cancel-button
+  bind:confirm="onInputConfirm">
+  <van-field autosize placeholder="请输入主播名字,若能提供主播预告来源更佳..." bind:confirm="onInputConfirm" bind:change="onInputChange" />
+</van-dialog>
+
+<!-- 底部工具 -->
+<van-row custom-class="bottom">
+  <van-col offset="6" span="4">
+    <van-button plain hairline icon="share" type="default" open-type="share" />
+  </van-col>
+  <van-col span="4">
+    <van-button plain hairline icon="service-o" type="default" open-type="contact" />
+  </van-col>
+
+  <van-col span="4">
+    <van-button plain hairline icon="add-o" type="default" bindtap="onNoListTap" />
+  </van-col>
+
+</van-row>
