@@ -1,0 +1,52 @@
+<!-- 主页 -->
+<view class="con">
+
+	<button open-type="getUserInfo" bindgetuserinfo="getUserInfo" data-index="3">
+		<view class="item border">
+			<van-loading custom-class="loadbar" wx:if="{{curTouch==3}}" />
+			<view class="ani1Con">
+				<image class="ani3" src="/images/ani1.png" animation="{{ani1}}" bindtransitionend="reAnimation1"></image>
+			</view>
+			<text class="txt">碎片交换</text>
+		</view>
+	</button>
+
+	<!-- <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" data-index="4">
+		<view class="item">
+			<view class="ani4Con">
+				<image class="ani4" src="/images/ani4.png" animation="{{ani4}}" bindtransitionend="reAnimation4"></image>
+			</view>
+			<text class="txt">勾协交换</text>
+		</view>
+	</button> -->
+
+	<button open-type="getUserInfo" bindgetuserinfo="getUserInfo" data-index="1">
+		<view class="item border">
+			<van-loading custom-class="loadbar" wx:if="{{curTouch==1}}" />
+			<view class="ani4Con">
+				<image class="ani4" src="/images/ani4.png" animation="{{ani4}}" bindtransitionend="reAnimation4"></image>
+			</view>
+			<text class="txt">妖怪屋扑克牌交换</text>
+		</view>
+	</button>
+
+	<button open-type="getUserInfo" bindgetuserinfo="getUserInfo" data-index="2">
+		<view class="item border">
+			<van-loading custom-class="loadbar" wx:if="{{curTouch==2}}" />
+			<view class="ani2Con">
+				<image class="ani2" src="/images/ani2.png" animation="{{ani2}}" bindtransitionend="reAnimation2"></image>
+			</view>
+			<text class="txt">式神扑克牌交换</text>
+		</view>
+	</button>
+
+</view>
+
+<button class="set" open-type="getUserInfo" bindgetuserinfo="getUserInfo" data-index="0">
+	<van-icon name="setting-o" size="20px" />
+</button>
+
+<van-dialog use-slot title="设置" show="{{ showSet }}" show-cancel-button bind:close="onSetClose" bind:confirm="onSetSave">
+	<van-notice-bar wrapable text="请填入任何可联系到你的方式后进行匹配..." />
+	<van-field value="{{ contact }}" label="联系方式" placeholder="请输入微信号/手机号" bind:change="onSetChange" />
+</van-dialog>

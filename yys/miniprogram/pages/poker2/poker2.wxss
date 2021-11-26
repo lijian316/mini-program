@@ -1,0 +1,63 @@
+.card {
+  text-align: center;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+
+.title {
+  margin: 30px 10px 15px 10px;
+  font-weight: lighter;
+}
+
+.btn {
+  display: inline;
+  border: 1px solid #333;
+  font-weight: lighter;
+  margin: 50px auto;
+}
+
+.pop {
+  padding: 10px;
+}
+
+.select {
+  background-color: bisque;
+  border-radius: 10rem;
+}
+
+.loading {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  margin-top: 300px;
+}
+
+.resultCon {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.resultItem {
+  width: 85%;
+  margin: 10px auto;
+  display: block;
+  border: 1px solid #333;
+}
+
+.img {
+  text-align: center;
+  margin: 5px auto;
+}
+
+.shareBtn[plain] {
+  border: solid 1px #333;
+  margin: 30px auto;
+  font-weight: lighter;
+}
+
+.shareTxt {
+  font-size: 14px;
+  font-weight: lighter;
+  color: #333;
+}

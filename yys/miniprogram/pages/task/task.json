@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "van-divider": "../../vant-weapp-dev/dist/divider/index",
+    "van-row": "../../vant-weapp-dev/dist/row/index",
+    "van-col": "../../vant-weapp-dev/dist/col/index",
+    "van-card": "../../vant-weapp-dev/dist/card/index",
+    "van-button": "../../vant-weapp-dev/dist/button/index",
+    "van-count-down": "../../vant-weapp-dev/dist/count-down/index"
+  },
+  "navigationBarTitleText": ""
+}

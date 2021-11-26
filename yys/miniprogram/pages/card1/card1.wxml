@@ -1,0 +1,46 @@
+<view class="table">
+	<view class="tr bg-w">
+		<view class="th">\</view>
+		<view class="th">梅花</view>
+		<view class="th">黑桃</view>
+		<view class="th">方块</view>
+		<view class="th last">红桃</view>
+	</view>
+	<block wx:for="{{listData}}" wx:key="{[code]}">
+		<view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+			<view class="td">{{item.code}}</view>
+			<view class="td" bindtap="onTouch" data-row="{{index}}" data-col="0">{{item.meihua}}</view>
+			<view class="td" bindtap="onTouch" data-row="{{index}}" data-col="1">{{item.heitao}}</view>
+			<view class="td" bindtap="onTouch" data-row="{{index}}" data-col="2">{{item.fangkuai}}</view>
+			<view class="td last" bindtap="onTouch" data-row="{{index}}" data-col="3">{{item.hongtao}}</view>
+		</view>
+		<view class="tr" wx:else>
+			<view class="td">{{item.code}}</view>
+			<view class="td" bindtap="onTouch" data-row="{{index}}" data-col="0">{{item.meihua}}</view>
+			<view class="td" bindtap="onTouch" data-row="{{index}}" data-col="1">{{item.heitao}}</view>
+			<view class="td" bindtap="onTouch" data-row="{{index}}" data-col="2">{{item.fangkuai}}</view>
+			<view class="td last" bindtap="onTouch" data-row="{{index}}" data-col="3">{{item.hongtao}}</view>
+		</view>
+	</block>
+</view>
+
+<button class="btn" bindtap="onSubmit">开始匹配</button>
+
+<!-- 结果 -->
+<van-popup show="{{ resultShow }}" round position="bottom" custom-style="height: 80%" bind:close="onClose" custom-class="pop">
+	<view wx:if="{{ hasResult}}" class="resultCon">
+		<van-divider contentPosition="center">点击一键复制微信昵称，联系TA</van-divider>
+		<view wx:for="{{searchResult}}">
+			<view class="resultItem" bindtap="onCopy" data-name="{{item.name}}">{{item.name}}: 可用 {{item.need}} 兑换TA的 {{item.give}}</view>
+		</view>
+	</view>
+	<view wx:if="{{ !hasResult}}" class="resultCon">
+		<van-divider contentPosition="center">未匹配到合适的痒痒鼠，嘤嘤嘤</van-divider>
+	</view>
+</van-popup>
+
+<van-overlay show="{{ searching }}">
+	<view class="wrapper">
+		<van-loading type="spinner" vertical color="#1989fa" custom-class="loading" />
+	</view>
+</van-overlay>

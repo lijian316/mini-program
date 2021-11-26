@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-popup": "../../vant-weapp-dev/dist/popup/index",
+    "van-button": "../../vant-weapp-dev/dist/button/index",
+    "van-divider": "../../vant-weapp-dev/dist/divider/index",
+    "van-loading": "../../vant-weapp-dev/dist/loading/index",
+    "van-overlay": "../../vant-weapp-dev/dist/overlay/index"
+  }
+}

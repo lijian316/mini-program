@@ -1,0 +1,9 @@
+	<view wx:for="{{taskes}}">
+		<button class="card">
+			{{item.name}}
+			<van-card num="{{item.count}}" desc="描述信息" title="商品标题" thumb="{{ imageURL }}" />
+			<view class="time-box">
+				<van-count-down time="{{ item.time }}" format="HH 时 mm 分 ss 秒" bind:finish="finished" />
+			</view>
+		</button>
+	</view>

@@ -1,0 +1,40 @@
+page {
+  text-align: center;
+}
+
+.container {
+  width: 90%;
+  height: 450px;
+  margin: 25rpx auto;
+  position: relative;
+  background: #fff;
+  border: none;
+  border-radius: 0.2857rem;
+  box-shadow: 0 3px 0 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+  -webkit-transition: box-shadow 0.2s ease;
+  transition: box-shadow 0.2s ease;
+}
+
+.card {
+  margin: 25rpx auto;
+  position: relative;
+  width: 90%;
+  height: auto;
+  border: none;
+  border-radius: 0.2857rem;
+  box-shadow: 0 3px 0 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+  -webkit-transition: box-shadow 0.2s ease;
+  transition: box-shadow 0.2s ease;
+  padding: 0px;
+  text-align: left;
+  background-color: #fafafa;
+}
+
+.list {
+  border-radius: 0.2857rem;
+}
+
+.time-box {
+  width: 100%;
+  text-align: center;
+}

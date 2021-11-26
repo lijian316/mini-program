@@ -1,0 +1,87 @@
+	<view class="img" bindtap="clickImg">
+		<van-image round width="8rem" height="8rem" src="https://7979-yys-7gws87sn973c67e2-1304054899.tcb.qcloud.la/ygwpoker.png?sign=0c58ece582d3816d673edbfeca4e7d02&t=1606794766" />
+	</view>
+
+	<view class="title">我需要的：</view>
+	<van-row>
+		<van-col span="6" custom-class="card" bindtap="onEditor" data-type="0">
+			<van-image round width="3rem" height="3rem" src="https://7979-yys-7gws87sn973c67e2-1304054899.tcb.qcloud.la/editor.png?sign=ef1fc100023f58e03dd9b638dc22060c&t=1606533842" />
+			<view>编辑</view>
+		</van-col>
+		<van-col span="6" wx:for="{{needList}}" wx:key="{[id]}" custom-class="card">
+			<van-image round width="3rem" height="3rem" src="{{item.url}}" />
+			<view>{{item.name}}</view>
+		</van-col>
+	</van-row>
+
+	<view class="title">我提供的:</view>
+	<van-row>
+		<van-col span="6" custom-class="card" bindtap="onEditor" data-type="1">
+			<van-image round width="3rem" height="3rem" src="https://7979-yys-7gws87sn973c67e2-1304054899.tcb.qcloud.la/editor.png?sign=ef1fc100023f58e03dd9b638dc22060c&t=1606533842" />
+			<view>编辑</view>
+		</van-col>
+		<van-col span="6" wx:for="{{giveList}}" wx:key="{[id]}" custom-class="card">
+			<van-image round width="3rem" height="3rem" src="{{item.url}}" />
+			<view>{{item.name}}</view>
+		</van-col>
+	</van-row>
+
+	<button class="btn" bindtap="onSubmit">开始匹配</button>
+
+	<!-- 我需要的编辑 -->
+	<van-popup show="{{ needShow }}" round position="bottom" custom-style="height: 80%" bind:close="onClose" custom-class="pop">
+		<van-row>
+			<van-col span="6" wx:for="{{list}}" wx:key="{[id]}" custom-class="card" bindtap="onChange" data-index="{{index}}">
+				<view class="select" wx:if="{{item.needSelect}}">
+					<van-image round width=" 3rem" height="3rem" src="{{item.url}}" custom-class="img" />
+					<view>{{item.name}}</view>
+				</view>
+				<view wx:else>
+					<van-image round width=" 3rem" height="3rem" src="{{item.url}}" custom-class="img" />
+					<view>{{item.name}}</view>
+				</view>
+			</van-col>
+		</van-row>
+	</van-popup>
+
+	<!-- 我提供的编辑 -->
+	<van-popup show="{{ giveShow }}" round position="bottom" custom-style="height: 80%" bind:close="onClose" custom-class="pop">
+		<van-row>
+			<van-col span="6" wx:for="{{list}}" wx:key="{[id]}" custom-class="card" bindtap="onChange" data-index="{{index}}">
+				<view class=" select" wx:if="{{item.giveSelect}}">
+					<van-image round width=" 3rem" height="3rem" src="{{item.url}}" custom-class="img" />
+					<view>{{item.name}}</view>
+				</view>
+				<view wx:else>
+					<van-image round width=" 3rem" height="3rem" src="{{item.url}}" custom-class="img" />
+					<view>{{item.name}}</view>
+				</view>
+			</van-col>
+		</van-row>
+	</van-popup>
+
+	<!-- 结果 -->
+	<van-popup show="{{ resultShow }}" round position="bottom" custom-style="height: 80%" bind:close="onClose" custom-class="pop">
+		<view wx:if="{{ hasResult}}" class="resultCon">
+			<van-divider contentPosition="center">点击一键复制微信昵称，联系TA</van-divider>
+			<view wx:for="{{searchResult}}">
+				<view class="resultItem" bindtap="onCopy" data-name="{{item.name}}">可用 {{item.need}} 兑换 {{item.name}} 的 {{item.give}}</view>
+			</view>
+		</view>
+		<view wx:if="{{ !hasResult}}" class="resultCon">
+			<van-divider contentPosition="center">未匹配到合适的痒痒鼠</van-divider>
+			<text class="shareTxt">点击分享，让更多好友加入痒痒鼠交换屋进行匹配吧...</text>
+			<button class="shareBtn" data-name="shareBtn" open-type="share" plain="true">分享</button>
+		</view>
+	</van-popup>
+
+	<van-overlay show="{{ searching }}">
+		<view class="wrapper">
+			<van-loading type="spinner" vertical color="#1989fa" custom-class="loading" />
+		</view>
+	</van-overlay>
+
+	<van-dialog use-slot title="设置" show="{{ showSet }}" show-cancel-button bind:close="onSetClose" bind:confirm="onSetSave">
+		<van-notice-bar wrapable text="请填入任何可联系到你的方式后进行匹配..." />
+		<van-field value="{{ contact }}" label="联系方式" placeholder="请输入微信号/手机号" bind:change="onSetChange" />
+	</van-dialog>
