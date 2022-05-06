@@ -8,7 +8,7 @@ const db = cloud.database({
 })
 
 // 云函数入口函数
-exports.main = async(event, context) => {
+exports.main = async (event, context) => {
   // return event;
   return db.collection('tangdb').where({
       myCode: Number(event.myCode),
@@ -22,7 +22,8 @@ exports.main = async(event, context) => {
         time: String(event.time) || "",
         active: Number(event.active) || 0,
         emsNum: String(event.emsNum) || "",
-        region: event.region || ["广东省", "深圳市", "南山区"]
+        region: event.region || ["广东省", "深圳市", "南山区"],
+        weight: String(event.weight) || "0"
       }
     })
 }

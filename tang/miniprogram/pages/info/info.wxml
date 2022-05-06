@@ -22,14 +22,14 @@
     <image class="icon" src="/images/tel.png" mode="aspectFit"></image>
     <textarea class="myTxt" bindinput="bindTelChange" auto-height placeholder="请输入联系电话" value='{{tel}}' />
   </view>
-  <!-- <view class="section" wx:if="{{active==0}}">
-    <image class="icon" src="/images/pin.png" mode="aspectFit"></image>
-    <textarea class="myTxt" disabled="false" auto-height value='{{eat}}' />
-  </view> -->
+  <view class="section" wx:if="{{active==0}}">
+    <image class="icon" src="/images/tizhong.png" mode="aspectFit"></image>
+    <input class="myTxt" type="number" bindinput="blindWeightChange" auto-height placeholder="请输入体重(公斤)" value='{{weight}}' />
+  </view>
   <view wx:if="{{active==0}}">
     <button class="commit-btn" bindtap="commit" disabled="{{notOpen}}">登记</button>
   </view>
-  <view>快递费：{{emsMoney}}，挂号费： {{menMoney}}，材料费：5</view>
+  <!-- <view>快递费：{{emsMoney}}，挂号费： {{menMoney}}，材料费：5</view> -->
   <text wx:if="{{active==0}}">{{reason}}</text>
 
   <!-- =================step2=============== -->

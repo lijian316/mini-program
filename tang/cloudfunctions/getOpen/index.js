@@ -11,10 +11,10 @@ exports.main = async(event, context) => {
   //info:xxxx 通知栏消息
   return {
     notOpen: false,
-    info: "公告：请保存好二维码，需要寄糖提前10天即可",
+    info: "公告：寄药费用40元，统一顺丰，快递费到付",
     menMoney: 25,
     emsMoney: {
-      广东省: 10,
+      广东省: 40,
       上海市: 15,
       江苏省: 12,
       浙江省: 12,

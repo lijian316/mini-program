@@ -36,7 +36,8 @@ Page({
     time: "0",
     emsMoneyArr: {},
     emsMoney: 0,
-    menMoney: 0
+    menMoney: 0,
+    weight: "",
   },
 
   ask: function () {
@@ -101,6 +102,12 @@ Page({
     })
   },
 
+  blindWeightChange: function (e) {
+    this.setData({
+      weight: e.detail.value
+    })
+  },
+
   checkDB: function () {
     console.log("checkDB");
     const db = wx.cloud.database({
@@ -126,6 +133,7 @@ Page({
             var tel = "";
             var time = 0;
             var emsMoney = 0;
+            var weight = "";
             //激活界面
             if (res.data[0].active) {
               if (res.data[0].active >= 2) {
@@ -164,6 +172,15 @@ Page({
               }
             }
             console.log("address：", region[0], region[1], region[2], address);
+            //体重
+            if (res.data[0].weight) {
+              if (res.data[0].weight == "undefined") {
+                weight = "";
+              } else {
+                weight = res.data[0].weight;
+              }
+            }
+            console.log("weight:", weight);
             //组合
             if (res.data[0].eat) {
               eat = res.data[0].eat;
@@ -211,7 +228,8 @@ Page({
               active: active,
               time: String(time),
               emsNum: emsNum,
-              emsMoney: emsMoney
+              emsMoney: emsMoney,
+              weight: weight
             })
             //检查是否符合登记时间限制
             console.log("get db success", that.data.notOpen);
@@ -261,7 +279,7 @@ Page({
       })
       return;
     }
-    if (this.data.address == "" || this.data.tel == "") {
+    if (this.data.address == "" || this.data.tel == "" || this.data.weight == "") {
       wx.showToast({
         title: '表单中有未填项目，请填写完整',
         icon: 'none',
@@ -325,7 +343,8 @@ Page({
         tel: Number(this.data.tel),
         time: this.formatTime(),
         active: 1,
-        emsNum: String(this.data.emsNum)
+        emsNum: String(this.data.emsNum),
+        weight: String(this.data.weight)
       },
       complete: res => {
         this.pushData();
@@ -346,6 +365,7 @@ Page({
         address: this.data.region[0] + this.data.region[1] + this.data.region[2] + String(this.data.address),
         eat: String(this.data.eat),
         time: String(this.formatTime()),
+        weight: String(this.data.weight)
       },
       success: function (res) {
         that.setData({

@@ -1,10 +1,8 @@
 {
   "pages": [
+    
     "pages/article/article",
     "pages/tool/tool",
-    
-    
-    
     "pages/index/index",
     "pages/info/info"
   ],

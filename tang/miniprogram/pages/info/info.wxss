@@ -38,7 +38,7 @@
 
 .section {
   width: 85%;
-  margin: 50rpx auto 0 auto;
+  margin: 20rpx auto 20rpx auto;
   text-transform: none;
   background: #e8e8e8;
   padding: 0.6em 0.8em 0.6em 0.5em;
