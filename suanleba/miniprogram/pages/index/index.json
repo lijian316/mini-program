@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "van-notice-bar": "../../lib/dist/notice-bar/index",
+    "van-image": "../../lib/dist/image/index"
+  }
+}

@@ -20,9 +20,9 @@
         "uploadWithSourceMap": true,
         "compileHotReLoad": false,
         "lazyloadPlaceholderEnable": false,
-        "useMultiFrameRuntime": true,
-        "useApiHook": true,
-        "useApiHostProcess": true,
+        "useMultiFrameRuntime": false,
+        "useApiHook": false,
+        "useApiHostProcess": false,
         "babelSetting": {
             "ignore": [],
             "disablePlugins": [],
@@ -35,15 +35,14 @@
         "packNpmRelationList": [],
         "minifyWXSS": true,
         "disableUseStrict": false,
+        "minifyWXML": true,
         "showES6CompileOption": false,
-        "useCompilerPlugins": false,
-        "minifyWXML": true
+        "useCompilerPlugins": false
     },
-    "appid": "wx4e573e4c657b4b79",
-    "projectname": "yugao",
+    "appid": "wx8cbbc843949ad801",
+    "projectname": "suanleba",
     "libVersion": "2.14.1",
-    "simulatorType": "wechat",
-    "simulatorPluginLibVersion": {},
+    "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
     "condition": {
         "search": {
             "list": []

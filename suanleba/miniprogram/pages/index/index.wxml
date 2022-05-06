@@ -1,0 +1,25 @@
+<!--index.wxml-->
+<view class="container">
+
+  <view class="card" wx:for="{{list}}" wx:key="unique">
+    <!-- 左侧 -->
+    <view class="card-content">
+      <van-notice-bar scrollable="{{ scrollable }}" text="{{item.title}}" />
+      <image src="{{item.img}}"></image>
+      <view></view>
+    </view>
+    <!-- 右侧 -->
+    <view class="card-menu">
+      <view class="card-play">
+        <image src="../../images/play.png"></image>
+      </view>
+      <view class="card-talk">
+        <image src="../../images/talk.png"></image>
+      </view>
+    </view>
+  </view>
+
+</view>
+
+<view class="nav">
+</view>

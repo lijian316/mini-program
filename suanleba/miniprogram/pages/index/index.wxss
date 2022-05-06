@@ -1,0 +1,58 @@
+page {
+  padding-top: 54rpx;
+  background-color: #ffc412;
+  padding-bottom: 60rpx;
+}
+
+/* 卡片 */
+.card {
+  width: 94%;
+  height: 202px;
+  margin-bottom: 30px;
+  font-weight: lighter;
+}
+
+/* 左侧内容 */
+.card-content {
+  width: 78%;
+  height: 200px;
+  border: 1px solid #333;
+  background-color: #fff;
+  float: left;
+}
+
+.card-content image {
+  width: 100%;
+  height: 130px;
+  overflow: hidden;
+}
+
+.card-menu {
+  width: 18%;
+  height: 154px;
+  margin-top: 48px;
+  float: right;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.card-menu image {
+  width: 100%;
+  height: 70px;
+  overflow: hidden;
+}
+
+.card-play {
+  width: 100%;
+  height: 70px;
+  border: 1px solid #333;
+  float: right;
+}
+
+.card-talk {
+  width: 100%;
+  height: 70px;
+  border: 1px solid #333;
+  margin-top: 10px;
+  float: right;
+}

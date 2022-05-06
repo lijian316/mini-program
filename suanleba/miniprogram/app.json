@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/test/test"
+  ],
+  "window": {
+    "backgroundColor": "#ffc412",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffc412",
+    "navigationBarTitleText": "蒜了吧",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}
