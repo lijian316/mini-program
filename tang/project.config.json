@@ -21,8 +21,6 @@
         "compileHotReLoad": false,
         "lazyloadPlaceholderEnable": false,
         "useMultiFrameRuntime": true,
-        "useApiHook": true,
-        "useApiHostProcess": true,
         "babelSetting": {
             "ignore": [],
             "disablePlugins": [],
@@ -37,35 +35,33 @@
         "disableUseStrict": false,
         "minifyWXML": true,
         "showES6CompileOption": false,
-        "useCompilerPlugins": false
+        "useCompilerPlugins": false,
+        "ignoreUploadUnusedFiles": true
     },
-    "appid": "wx3c25b90bf5b56a24",
-    "projectname": "%E7%B3%96%E6%9D%A5%E5%92%AF",
-    "libVersion": "2.21.0",
     "simulatorType": "wechat",
     "simulatorPluginLibVersion": {},
-    "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+    "cloudfunctionTemplateRoot": "cloudfunctionTemplate/",
     "condition": {
-        "search": {
-            "list": []
-        },
-        "conversation": {
-            "list": []
-        },
-        "plugin": {
-            "list": []
-        },
-        "game": {
-            "list": []
-        },
         "miniprogram": {
             "list": [
                 {
-                    "id": -1,
                     "name": "db guide",
-                    "pathName": "pages/databaseGuide/databaseGuide"
+                    "pathName": "pages/databaseGuide/databaseGuide",
+                    "query": ""
                 }
             ]
         }
-    }
+    },
+    "compileType": "miniprogram",
+    "srcMiniprogramRoot": "miniprogram/",
+    "editorSetting": {
+        "tabIndent": "insertSpaces",
+        "tabSize": 4
+    },
+    "libVersion": "2.17.0",
+    "packOptions": {
+        "ignore": [],
+        "include": []
+    },
+    "appid": "wx3c25b90bf5b56a24"
 }
