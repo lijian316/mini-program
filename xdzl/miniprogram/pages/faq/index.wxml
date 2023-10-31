@@ -1,0 +1,20 @@
+<van-collapse accordion value="{{ activeName }}" bind:change="onChange">
+    <van-collapse-item title="放一些用户常见的问题1" name="1">
+        放一些用户常见的问题回复1
+    </van-collapse-item>
+    <van-collapse-item title="放一些用户常见的问题2" name="2">
+        放一些用户常见的问题回复2
+    </van-collapse-item>
+    <van-collapse-item title="放一些用户常见的问题3" name="3">
+        放一些用户常见的问题回复3
+    </van-collapse-item>
+    <van-collapse-item title="放一些用户常见的问题4" name="4">
+        放一些用户常见的问题回复4
+    </van-collapse-item>
+
+</van-collapse>
+
+
+<button class="kefu-btn" open-type="contact">
+    <image class="kefu-icon" src="/images/kefu.png"></image>
+</button>

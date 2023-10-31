@@ -1,0 +1,16 @@
+<view class="container">
+    <view class="title">{{type==0?"陪诊":"陪护"}}登记</view>
+    <van-cell-group wx:if="{{!success}}">
+        <van-field value="{{ name }}" required clearable label="姓名" placeholder="请输入姓名" bind:change="onNameChange" />
+        <van-field value="{{ phone }}" required clearable label="联系电话" placeholder="请输入联系方式" bind:change="onPhoneChange" />
+        <van-cell title="预约日期" required value="{{ date }}" bind:click="onDisplay" />
+        <van-calendar show="{{ show }}" color="#F2BF36" bind:close="onClose" bind:confirm="onConfirm" />
+        <button class="submit-button" bind:tap="onSubmit">登记</button>
+    </van-cell-group>
+
+    <van-cell-group wx:if="{{ success}}">
+        <view class="txt">登记成功</view>
+        <view>登记ID号已复制，您可以请点击下方按钮粘贴登记ID</view>
+        <button class="submit-button" open-type="contact">前往确认</button>
+    </van-cell-group>
+</view>

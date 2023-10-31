@@ -1,92 +1,105 @@
 <!-- 财富自由进度条 -->
 <view class="top-container">
-    <view class="name-txt">Hey</view>
-    <progress class="progress-box" percent="60" active stroke-width="10" activeColor="#576fc7" backgroundColor="#fff" />
-    <view class="progress-txt progress-txt-l">自由进度：20%</view>
-    <view class="progress-txt progress-txt-l">被动收入：￥0</view>
-    <view class="progress-txt progress-txt-r">累计负债：￥1200</view>
+  <view class="name-txt" bindtap="setPayDay">Hey</view>
+  <progress class="progress-box" percent="{{progress}}" active stroke-width="10" activeColor="#576fc7" backgroundColor="#fff" />
+  <view class="progress-txt progress-txt-l">自由进度：{{progress}}%</view>
+  <view class="progress-txt progress-txt-l">被动收入：￥{{passive_income}}</view>
+  <view class="progress-txt progress-txt-r">累计负债：￥{{pay_num}}</view>
+  <view class="progress-txt progress-txt-r"> ------</view>
+  <picker bindchange="payFullDay" value="{{0}}" range="{{[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]}}">
+    <view class="progress-txt progress-txt-r">账单日期：{{payDay}}（点击修改）</view>
+  </picker>
+
+
 </view>
 
+<!-- 资产 -->
 <ul class="list-box">
-    <li class="list-item head" bindtap="addAssets">
-        <image class="icon" src="../../images/icon0.png" mode="aspectFit"></image>
-        资产
-    </li>
-    <view class="list-add" wx:if="{{showAddAssets}}">
-        <view class="arrow"></view>
-        <view class="content">
-            <form bindsubmit="addAssetsComfirm">
-                <input class="list-input" name="name" placeholder="请输入资产名称" placeholder-style="color:#fff" />
-                <input class="list-input" name="cost" type="number" placeholder="请输入资产成本" placeholder-style="color:#fff" />
-                <input class="list-input" name="value" type="number" placeholder="请输入资产收入" placeholder-style="color:#fff" />
-                <button class="list-btn" hover-class="list-btn-hover" form-type="submit">添加</button>
-            </form>
-        </view>
+  <li class="list-item head" bindtap="addAssets">
+    <image class="icon" src="../../images/icon0.png" mode="aspectFit"></image> 资产
+  </li>
+  <view class="list-add" wx:if="{{showAddAssets}}">
+    <view class="arrow"></view>
+    <view class="content">
+      <form bindsubmit="addAssetsComfirm">
+        <input class="list-input" name="name" placeholder="请输入资产名称" placeholder-style="color:#fff" />
+        <input class="list-input" name="cost" type="number" placeholder="请输入资产成本" placeholder-style="color:#fff" />
+        <input class="list-input" name="value" type="number" placeholder="请输入资产收入" placeholder-style="color:#fff" />
+        <button class="list-btn" hover-class="list-btn-hover" form-type="submit">添加</button>
+      </form>
     </view>
-    <li class="list-item" wx:for="{{assets}}" wx:key="unique" bindtap="removeAssets" data-index="{{index}}">
-        <text class="list-txt l">{{item.name}}</text>
-        <text class="list-txt r">{{item.cost}}</text>
-    </li>
+  </view>
+  <li class="list-item" wx:for="{{assets}}" wx:key="unique" bindtap="removeAssets" data-index="{{index}}">
+    <text class="list-txt l">{{item.name}}</text>
+    <text class="list-txt r">{{item.cost}}</text>
+  </li>
 </ul>
 
+<!-- 负债 -->
 <ul class="list-box">
-    <li class="list-item head" bindtap="addDebt">
-        <image class="icon" src="../../images/icon3.png" mode="aspectFit"></image>
-        负债
-    </li>
-    <view class="list-add" wx:if="{{showAddDebt}}">
-        <view class="arrow"></view>
-        <view class="content">
-            <form bindsubmit="addDebtComfirm">
-                <input class="list-input" name="name" placeholder="请输入负债名称" placeholder-style="color:#fff" />
-                <input class="list-input" name="cost" type="number" placeholder="请输入负债总成本" placeholder-style="color:#fff" />
-                <input class="list-input" name="value" type="number" placeholder="请输入负债月利息" placeholder-style="color:#fff" />
-                <button class="list-btn" hover-class="list-btn-hover" form-type="submit">添加</button>
-            </form>
-        </view>
+  <li class="list-item head" bindtap="addDebt">
+    <image class="icon" src="../../images/icon3.png" mode="aspectFit"></image> 负债
+  </li>
+  <view class="list-add" wx:if="{{showAddDebt}}">
+    <view class="arrow"></view>
+    <view class="content">
+      <form bindsubmit="addDebtComfirm">
+        <input class="list-input" name="name" placeholder="请输入负债名称" placeholder-style="color:#fff" />
+        <input class="list-input" name="cost" type="number" placeholder="请输入负债总成本" placeholder-style="color:#fff" />
+        <input class="list-input" name="value" type="number" placeholder="请输入负债月利息" placeholder-style="color:#fff" />
+        <button class="list-btn" hover-class="list-btn-hover" form-type="submit">添加</button>
+      </form>
     </view>
-    <li class="list-item" wx:for="{{debt}}" wx:key="unique" bindtap="removeDebt" data-index="{{index}}">
-        <text class="list-txt l">{{item.name}}</text>
-        <text class="list-txt r">{{item.value}}</text>
-    </li>
+  </view>
+  <li class="list-item" wx:for="{{debt}}" wx:key="unique" bindtap="removeDebt" data-index="{{index}}">
+    <text class="list-txt l">{{item.name}}</text>
+    <text class="list-txt r">{{item.cost}}</text>
+  </li>
 </ul>
 
+<!-- 收入 -->
 <ul class="list-box">
-    <li class="list-item head" bindtap="addIncome">
-        <image class="icon" src="../../images/icon1.png" mode="aspectFit"></image>
-        收入
-    </li>
-    <view class="list-add" wx:if="{{showAddIncome}}">
-        <view class="arrow"></view>
-        <view class="content">
-            <form bindsubmit="addIncomeComfirm">
-                <input class="list-input" name="value" type="number" placeholder="请输入收入金额" placeholder-style="color:#fff" />
-                <button class="list-btn" hover-class="list-btn-hover" form-type="submit">添加</button>
-            </form>
-        </view>
+  <li class="list-item head" bindtap="addIncome">
+    <image class="icon" src="../../images/icon1.png" mode="aspectFit"></image> 收入
+  </li>
+  <view class="list-add" wx:if="{{showAddIncome}}">
+    <view class="arrow"></view>
+    <view class="content">
+      <form bindsubmit="addIncomeComfirm">
+        <input class="list-input" name="value" type="number" placeholder="请输入收入金额" placeholder-style="color:#fff" />
+        <button class="list-btn" hover-class="list-btn-hover" form-type="submit">添加</button>
+      </form>
     </view>
-    <li class="list-item" wx:for="{{income}}" wx:key="unique">
-        <text class="list-txt l">{{item.name}}</text>
-        <text class="list-txt r">{{item.value}}</text>
-    </li>
+  </view>
+  <li class="list-item" wx:for="{{income}}" wx:key="unique">
+    <text class="list-txt l">{{item.name}}</text>
+    <text class="list-txt r">{{item.value}}</text>
+  </li>
 </ul>
 
+<!-- 支出 -->
 <ul class="list-box">
-    <li class="list-item head" bindtap="addPay">
-        <image class="icon" src="../../images/icon2.png" mode="aspectFit"></image>
-        支出
-    </li>
-    <view class="list-add" wx:if="{{showAddPay}}">
-        <view class="arrow"></view>
-        <view class="content">
-            <form bindsubmit="addPayComfirm">
-                <input class="list-input" name="value" type="number" placeholder="请输入支付金额" placeholder-style="color:#fff" />
-                <button class="list-btn" hover-class="list-btn-hover" form-type="submit">添加</button>
-            </form>
-        </view>
+  <li class="list-item head" bindtap="addPay">
+    <image class="icon" src="../../images/icon2.png" mode="aspectFit"></image> 支出
+  </li>
+  <view class="list-add" wx:if="{{showAddPay}}">
+    <view class="arrow"></view>
+    <view class="content">
+      <form bindsubmit="addPayComfirm">
+        <input class="list-input" name="value" type="number" placeholder="请输入支付金额" placeholder-style="color:#fff" />
+        <button class="list-btn" hover-class="list-btn-hover" form-type="submit">添加</button>
+      </form>
     </view>
-    <li class="list-item" wx:for="{{pay}}" wx:key="unique">
-        <text class="list-txt l">{{item.name}}</text>
-        <text class="list-txt r">{{item.value}}</text>
-    </li>
+  </view>
+  <li class="list-item" wx:for="{{pay}}" wx:key="unique">
+    <text class="list-txt l">{{item.name}}</text>
+    <text class="list-txt r">{{item.value}}</text>
+  </li>
 </ul>
+
+<!-- 结算 -->
+<view class="result-box">
+  <text>本月总收入{{income_num}}-总支出{{pay_num}}={{income_num - pay_num}}</text>
+</view>
+
+<!-- 日期 -->

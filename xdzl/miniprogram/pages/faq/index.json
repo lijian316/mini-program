@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "van-collapse": "../../vantui-miniprogram/collapse/index",
+        "van-collapse-item": "../../vantui-miniprogram/collapse-item/index"
+    }
+}

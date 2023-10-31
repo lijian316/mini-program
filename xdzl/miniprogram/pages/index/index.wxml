@@ -1,0 +1,36 @@
+<view class="container">
+    <view class="main-section">
+        <image src="/images/0.png" mode="center"></image>
+        <view class="title">『 小呆助理 』</view>
+        <view>-为您解决难题的好帮手-</view>
+    </view>
+
+    <van-notice-bar left-icon="volume-o" text="公告1：暂无；" />
+
+    <view class="grid-section">
+        <view class="grid-item grid-border-bottom" bindtap="handleGridItemClick" data-index="0">
+            <image class="grid-icon" src="/images/dk.png"></image>
+            <text class="grid-label">陪诊登记</text>
+        </view>
+        <view class="grid-item grid-border-bottom" bindtap="handleGridItemClick" data-index="1">
+            <image class="grid-icon" src="/images/dj.png"></image>
+            <text class="grid-label">陪护登记</text>
+        </view>
+        <view class="grid-item" bindtap="handleGridItemClick" data-index="2">
+            <image class="grid-icon" src="/images/faq.png"></image>
+            <text class="grid-label">FAQ</text>
+        </view>
+        <view class="grid-item" bindtap="handleGridItemClick" data-index="3">
+            <image class="grid-icon" src="/images/kfz.png"></image>
+            <text class="grid-label">敬请期待</text>
+        </view>
+        <view class="grid-item" bindtap="handleGridItemClick" data-index="4">
+            <image class="grid-icon" src="/images/kfz.png"></image>
+            <text class="grid-label">敬请期待</text>
+        </view>
+        <view class="grid-item" bindtap="handleGridItemClick" data-index="5">
+            <image class="grid-icon" src="/images/kfz.png"></image>
+            <text class="grid-label">敬请期待</text>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "van-field": "../../vantui-miniprogram/field/index",
+        "van-calendar": "../../vantui-miniprogram/calendar/index",
+        "van-cell": "../../vantui-miniprogram/cell/index",
+        "van-cell-group": "../../vantui-miniprogram/cell-group/index"
+    }
+}
